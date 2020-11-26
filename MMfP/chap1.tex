@@ -1,0 +1,129 @@
+\chapter{Mathematical Preliminaries} % (fold)
+\label{cha:Mathematical Preliminaries}
+\section{Infinite Series} % (fold)
+\label{sec:Infinite Series}
+\question{1.1 Infinite Series}
+\begin{qparts}
+    \qpart
+        \begin{qlist}
+            \qitem 極限$\displaystyle\lim_{n\to\infty}n^pu_n = A < \infty ,\ p>1$が存在し, $u_n$が単調増加数列であるとき, 無限級数$\displaystyle\sum_{n=1}^{\infty}u_n$が収束することを示せ. 
+            \begin{proof}
+                $n\to\infty$で$u_n=A/n^p$であり, 数列$u_n$が単調増加であるので, 
+                \begin{equation}
+                    u_n<\frac{A}{n^p}\ (1<n<\infty) \notag
+                \end{equation}
+                である. したがって不等式
+                \begin{equation}
+                    \sum_{n=1}^{\infty}u_n < \sum_{n=1}^{\infty}\frac{A}{n^p} \notag
+                \end{equation}
+                を得る. いま数列$u_n$は振動せず, 各項は正の値で考えているので$-\infty$への発散も考えなくてよく, $\displaystyle\sum_{n=1}^{\infty}(A/n^p)$が収束することだけ示せばよい. 次に示す積分は
+                \begin{align}
+                    \int_1^{\infty}\frac{A}{x^p}\mathrm{d}x &= A\left[(1-p)x^{1-p}\right]_1^{\infty} = 0 \notag \\
+                    \int_1^{\infty}\frac{A}{x^p}\mathrm{d}x + u_1 &= u_1 < \infty \notag
+                \end{align}
+            \end{proof}
+
+            \qitem 極限$\displaystyle\lim_{n\to\infty}nu_n = A > 1$が存在するとき, 無限級数$\displaystyle\sum_{n=1}^{\infty}u_n$が発散する条件を求めよ. 
+
+            $n\to\infty$で$u_n=A/n$である. ここで調和級数$\displaystyle\sum_{n=1}^{\infty}1/n$を考えると, これはExample1.1.2~\cite{MMfP}に載っているように部分和が発散するため発散する. したがって, 無限級数$\displaystyle\sum_{n=1}^{\infty}u_n$が発散するためには, 
+            \begin{equation}
+                \frac{A}{n} < u_n\ \text{for}\ \forall n \notag
+            \end{equation}
+            と評価されれば良い. これがいま求めたい発散条件である. 
+        \end{qlist}
+
+    \qpart $\displaystyle 0<\lim_{n\to\infty}(b_n/a_n)=K<\infty$. このとき, $\displaystyle\sum_na_n$が収束or発散で$\displaystyle\sum_nb_n$はどうなるか. 
+
+    $n\to\infty$で$b_n=Ka_n$である. $\displaystyle\sum_na_n$が収束(発散)するなら, $\displaystyle\sum_nKa_n$も収束(発散)する. したがって, $\displaystyle\sum_na_n$の収束性は$\displaystyle\sum_nb_n$の収束性と一致する. 
+\end{qparts}
+% section Infinite Series(end)
+
+\section{Series of Functions} % (fold)
+\label{sec:Series of Functions}
+\question{1.2 Series of Functions}
+\begin{qparts}
+    \qpart
+    \qpart
+    \qpart
+    \qpart
+    \qpart
+    \qpart
+    \qpart
+    \qpart
+    \qpart
+    \qpart
+    \qpart
+    \qpart
+
+    \qpart $n>1$のとき次の不等式を示せ. 
+        \begin{qlist}
+            \qitem $\displaystyle\frac{1}{n}-\mathrm{log}\left(\frac{n}{n-1}\right)<0$ \label{q:1.2.13a}
+            \begin{proof}
+                $1/|n|<1$なので, Maclaurin展開を用いて, 
+                \begin{align}
+                    \frac{1}{n}-\mathrm{log}\left(\frac{n}{n-1}\right) &= \frac{1}{n}-\left(\frac{1}{n}+\frac{1}{2n^2}+\frac{1}{3n^3}+\cdots\right) \notag \\
+                    &= -\left(\frac{1}{2n^2}+\frac{1}{3n^3}+\cdots\right) < 0 \notag
+                \end{align}
+                となり示された. 
+            \end{proof}
+
+            \qitem $\displaystyle\frac{1}{n}-\mathrm{log}\left(\frac{n+1}{n}\right)>0$ \label{q:1.2.13b}
+            \begin{proof}
+                小問\qref{q:1.2.13a}と同様にして, 
+                \begin{align}
+                    \frac{1}{n}-\mathrm{log}\left(\frac{n+1}{n}\right) &= \frac{1}{n}-\mathrm{log}\left(1+\frac{1}{n}\right) \notag \\
+                    &= \frac{1}{n}-\left(\frac{1}{n}-\frac{1}{2n^2}+\frac{1}{3n^3}-\cdots\right) \notag \\
+                    &= \left(\frac{1}{2n^2}-\frac{1}{3n^3}\right)+\left(\frac{1}{4n^4}-\frac{1}{5n^5}\right)+\cdots > 0 \notag
+                \end{align}
+                となり示された. 
+            \end{proof}
+
+            \qitem 小問\qref{q:1.2.13a}, \qref{q:1.2.13b}の結果を用いて, Euler-Mascheroniの定数がどのような範囲に収まるか求めよ. 
+
+            小問\qref{q:1.2.13a}の不等式を$n=2$から$\infty$まで和を取ると, 
+            \begin{align}
+                0 &> \sum_{n=2}^{\infty}\qty{\frac{1}{n}-\mathrm{log}\qty(\frac{n}{n-1})} \notag \\
+                &= \sum_{n=2}^{\infty}\frac{1}{n}-\mathrm{log}\left(\frac{2}{1}\frac{3}{2}\cdots\right) \notag \\
+                &= \sum_{n=2}^{\infty}\frac{1}{n}-\lim_{n\to\infty}\mathrm{log}\ n \notag \\
+                &= \gamma -1 \notag \\
+                \therefore\ &\gamma<1 \notag
+            \end{align}
+            を得る. また小問\qref{q:1.2.13b}の不等式を$n=2$から$\infty$まで和を取ると, 
+            \begin{align}
+                0 &< \sum_{n=1}^{\infty}\qty{\frac{1}{n}-\mathrm{log}\qty(\frac{n+1}{n})} \notag \\
+                &= \sum_{n=1}^{\infty}\frac{1}{n}-\mathrm{log}\left(\frac{2}{1}\frac{3}{2}\cdots\right) \notag \\
+                &= \sum_{n=1}^{\infty}\frac{1}{n}-\lim_{n\to\infty}\mathrm{log}\ n \notag \\
+                &= \gamma \notag \\
+                \therefore\ &\gamma>0 \notag
+            \end{align}
+            を得る. したがって, Euler-Mascheroniの定数は
+            \begin{equation}
+                0<\gamma<1 \notag
+            \end{equation}
+            の範囲にあると結論できる. 
+        \end{qlist}
+
+    \qpart 数値解析において次の近似はしばしば便利である, 
+    \begin{equation}
+        \psi^{(2)}(x) \approx \frac{1}{h^2}\lbrace\psi(x+h)-2\psi(x)+\psi(x-h)\rbrace .
+    \end{equation}
+    この近似における誤差を求めよ. 
+
+    \begin{align}
+        &\psi(x+h)-2\psi(x)+\psi(x-h) \notag \\
+        = &\left(\psi(x)+h\psi^{(1)}(x)+\frac{h^2}{2!}\psi^{(2)}(x)+\frac{h^3}{3!}\psi^{(3)}(x)+\frac{h^4}{4!}\psi^{(4)}(x)+\cdots\right) \notag \\
+        &-2\psi(x) \notag \\
+        &+\left(\psi(x)-h\psi^{(1)}(x)+\frac{h^2}{2!}\psi^{(2)}(x)-\frac{h^3}{3!}\psi^{(3)}(x)-\frac{h^4}{4!}\psi^{(4)}(x)+\cdots\right) \notag \\
+        = &h^2\psi^{(2)}(x)+\frac{h^4}{12}\psi^{(4)}(x)+\cdots \notag \\
+        \therefore\ &\frac{1}{h^2}\lbrace\psi(x+h)-2\psi(x)+\psi(x-h)\rbrace\approx\psi^{(2)}(x)+\frac{h^2}{12}\psi^{(4)}(x) \notag
+    \end{align}
+    したがってこの近似における誤差は
+    \begin{equation}
+        \frac{h^2}{12}\psi^{(4)}(x) \notag
+    \end{equation}
+    程度である. 
+
+    \qpart
+\end{qparts}
+% section Series of Functions(end)
+% chapter Mathematical Preliminaries(end)
